@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navgit from './Navgit'
 
 const Viewgit = () => {
@@ -19,14 +19,14 @@ const Viewgit = () => {
             )
         )
     )
-
+    useEffect(()=>{fetchData()}, [])
     return (
         <div>
             <div className="container-fluid p-0 m-0">
                 <Navgit />
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row g-3">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <h1 align="center" className='text-danger'>VIEW USER</h1>
                     </div>
@@ -36,7 +36,7 @@ const Viewgit = () => {
                         <div className="row">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                 <h2 class="mt-5" align="center">GIT USER LIST</h2>
-                                <table class="table table-bordered table-striped mt-3">
+                                <table class="table table-bordered table-striped table-dark mt-3">
                                     <thead class="table-dark">
                                         <tr>
                                             <th>ID</th>
@@ -73,17 +73,17 @@ const Viewgit = () => {
                                                             <td>{value.node_id}</td>
                                                             <td><img src={value.avatar_url} height="100px" width="100px" class="img-thumbnail" alt="..." /></td>
                                                             <td>{value.gravatar_id}</td>
-                                                            <td><a href={value.url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.html_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.followers_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.following_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.gists_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.starred_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.subscriptions_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.organizations_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.repos_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                            <td><a href={value.received_events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.html_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.followers_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.following_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.gists_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.starred_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.subscriptions_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.organizations_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.repos_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.events_url} target="_blank" class="">Click Here</a></td>
+                                                            <td><a href={value.received_events_url} target="_blank" class="">Click Here</a></td>
                                                             <td>{value.type}</td>
                                                             <td>{value.user_view_type}</td>
                                                         </tr>
