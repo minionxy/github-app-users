@@ -8,8 +8,8 @@ const Navgit = () => {
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="row">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                                    <div class="container-fluid">
+                                <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
+                                    <div class="container-fluid bg-info-subtle">
                                         <a class="navbar-brand" href="/">GITHUBB</a>
                                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>

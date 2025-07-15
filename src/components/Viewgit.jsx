@@ -6,24 +6,31 @@ const Viewgit = () => {
     const [views, changeViews] = useState(
         []
     )
-    const [isLoading,changeLoading]=useState(true)
-    const fetchData=()=>(
+    const [isLoading, changeLoading] = useState(true)
+    const fetchData = () => (
         axios.get("https://api.github.com/users").then(
-            (response)=>{
+            (response) => {
                 changeLoading(false)
                 changeViews(response.data)
             }
         ).catch(
-            (error)=>(
-                alert("Something went wrong"+error)
+            (error) => (
+                alert("Something went wrong" + error)
             )
         )
     )
 
     return (
         <div>
-            <Navgit/>
+            <div className="container-fluid p-0 m-0">
+                <Navgit />
+            </div>
             <div className="container">
+                <div className="row">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <h1 align="center" className='text-danger'>VIEW USER</h1>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="row">
@@ -52,42 +59,42 @@ const Viewgit = () => {
                                         </tr>
                                     </thead>
                                     {isLoading ? (
-                                            <div class="d-flex align-items-center">
-                                                <strong role="status">Loading...</strong>
-                                                <div class="spinner-border ms-auto" aria-hidden="true"></div>
-                                            </div>
-                                        ): (
-                                            <tbody>
-                                        {views.map(
-                                            (value, index) => {
-                                                return (
-                                                    <tr>
-                                                        <td>{value.id}</td>
-                                                        <td>{value.node_id}</td>
-                                                        <td><img src={value.avatar_url} height="100px" width="100px" class="img-thumbnail" alt="..." /></td>
-                                                        <td>{value.gravatar_id}</td>
-                                                        <td><a href={value.url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.html_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.followers_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.following_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.gists_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.starred_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.subscriptions_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.organizations_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.repos_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td><a href={value.received_events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
-                                                        <td>{value.type}</td>
-                                                        <td>{value.user_view_type}</td>
-                                                    </tr>
+                                        <div class="d-flex align-items-center">
+                                            <strong role="status">Loading...</strong>
+                                            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                                        </div>
+                                    ) : (
+                                        <tbody>
+                                            {views.map(
+                                                (value, index) => {
+                                                    return (
+                                                        <tr>
+                                                            <td>{value.id}</td>
+                                                            <td>{value.node_id}</td>
+                                                            <td><img src={value.avatar_url} height="100px" width="100px" class="img-thumbnail" alt="..." /></td>
+                                                            <td>{value.gravatar_id}</td>
+                                                            <td><a href={value.url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.html_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.followers_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.following_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.gists_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.starred_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.subscriptions_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.organizations_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.repos_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td><a href={value.received_events_url} target="_blank" class="btn btn-primary">Click Here</a></td>
+                                                            <td>{value.type}</td>
+                                                            <td>{value.user_view_type}</td>
+                                                        </tr>
 
-                                                )
-                                            }
+                                                    )
+                                                }
 
-                                        )}
-                                    </tbody>
-                                        )}
-                                    
+                                            )}
+                                        </tbody>
+                                    )}
+
                                 </table>
                             </div>
                         </div>
