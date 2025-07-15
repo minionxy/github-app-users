@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Addgit from './components/Addgit';
+import Viewgit from './components/Viewgit';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Searchgit from './components/Searchgit';
+import Deletegit from './components/Deletegit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={ <Addgit/> }/>
+    <Route path='/search' element={ <Searchgit/> }/>
+    <Route path='/delete' element={ <Deletegit/> }/>
+    <Route path='/view' element={ <Viewgit/> }/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
